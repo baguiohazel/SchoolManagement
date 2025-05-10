@@ -1,0 +1,124 @@
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-section">
+    <h1>INFOTECH DEVELOPMENT SYSTEMS COLLEGES, INC.</h1>
+</div>
+
+<div class="update-section">
+    <h1>UPDATES</h1>
+
+    <div class="navbar-search">
+        <input type="text" placeholder="Search..." class="search-input" />
+    </div>
+
+</div>
+<div class="datetime-display">
+    <div id="time"></div>
+    <div id="date"></div>
+
+    <div class="image-gallery">
+        <img src="~/images/osas.png" alt="Image 1" class="osas">
+    </div>
+
+    <div class="image-with-button">
+        <a href="/updates" class="view-all-btn">VIEW ALL UPDATES</a>
+        <img src="~/images/csc.png" alt="Image 2" class="csc">
+    </div>
+    <div class="image-with-button">
+        <img src="~/images/shs.png" alt="Image 3" class="shs">
+        <h1>NEWS</h1>
+    </div>
+    <div class="image-with-button">
+        <a href="/news" class="view-all-btn">VIEW ALL NEWS</a>
+        <img src="~/images/vox.png" alt="Image 4" class="vox">
+    </div>
+
+    <div class="full-screen-box">
+        <div class="image-row">
+            <div class="image-item">
+                <img src="~/images/admin.png" alt="Image 1">
+                <a href="@Url.Action("Login", "Account")" class="btn">Admin Portal</a>
+            </div>
+            <div class="image-item">
+                <img src="~/images/deans.png" alt="Image 2">
+                <a href="@Url.Action("Login", "Account")" class="btn">Dean's Portal</a>
+            </div>
+            <div class="image-item">
+                <img src="~/images/instructor.png" alt="Image 3">
+                <a href="@Url.Action("Login", "Account")" class="btn">Instructor Portal</a>
+            </div>
+            <div class="image-item">
+                <img src="@Url.Content("~/images/students.png")" alt="Image 4" />
+                <a href="@Url.Action("StudPortal", "PreRegistrations")" class="btn">Student Portal</a>
+            </div>
+
+            <div class="image-item">
+                <img src="~/images/calendar.png" alt="Image 5">
+                <button class="btn">IDS Calendar</button> <!-- Keep the Calendar as a button -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contacts-idsc">
+        <h1>CONTACTS</h1>
+
+        <div class="contact-wrapper">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p>
+                    <strong>Mailing Address:</strong><br />
+                    Natera St., Dunao,<br />
+                    Ligao City, Albay, Bicol,<br />
+                    Philippines, 4504
+                </p>
+
+                <p>
+                    <strong>Telephone No.:</strong><br />
+                    0917 881 2638
+                </p>
+
+                <p>
+                    <strong>Email Address:</strong><br />
+                    idscolleges@yahoo.com
+                </p>
+            </div>
+
+            <!-- Google Map Embed -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3883.7805615456687!2d123.5370978745506!3d13.239083408958562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a109ed8c58a15d%3A0x107f080926c49c1b!2sIDS%20Colleges%2C%20Inc.!5e0!3m2!1sfil!2sph!4v1743955330443!5m2!1sfil!2sph"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function updateTimeAndDate() {
+        const now = new Date();
+
+
+        const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+
+        const date = now.toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+        document.getElementById("time").textContent = time;
+        document.getElementById("date").textContent = date;
+    }
+
+    setInterval(updateTimeAndDate, 1000);
+
+    updateTimeAndDate();
+</script>
